@@ -8,7 +8,7 @@ class Grid extends React.Component {
     let grid = [];
     for (let i = 0; i < this.props.height; i++) {
       for (let j = 0; j < this.props.width; j++) {
-        row.push(<Block className={`${i}-${j}`}></Block>);
+        row.push(<Block key={`${i}-${j}`} className={`${i}-${j}`}></Block>);
       }
       grid.push(<tr>{row}</tr>);
       row = [];

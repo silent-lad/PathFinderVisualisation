@@ -1,12 +1,11 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Grid from "./Components/Grid";
 
 function App() {
   return (
     <div className="App">
-      <Grid height={3} width={5} />
+      <Grid height={25} width={60} />
     </div>
   );
 }
