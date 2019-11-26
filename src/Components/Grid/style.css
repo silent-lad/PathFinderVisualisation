@@ -4,3 +4,17 @@
   top: 100px;
   margin: 0 auto;
 }
+
+@keyframes visited {
+  0% {
+    transorm: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    background: yellowgreen;
+  }
+  100% {
+    transorm: scale(1);
+    background: green;
+  }
+}
