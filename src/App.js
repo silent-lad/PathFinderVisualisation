@@ -4,8 +4,6 @@ import Grid from "./Components/Grid";
 import Topbar from "./Components/Topbar/index.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import "react-bootstrap";
-
 function App() {
   return (
     <div className="App">

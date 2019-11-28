@@ -22,7 +22,7 @@ class TopBar extends React.Component {
         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav className="d-flex justify-content-center">
             <NavDropdown title="Algorithms" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">A *</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Djikstra</NavDropdown.Item>
@@ -30,11 +30,10 @@ class TopBar extends React.Component {
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">DFS</NavDropdown.Item>
             </NavDropdown>
+            <Form inline>
+              <Button variant="outline-success">Find Path</Button>
+            </Form>
           </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
-          </Form>
         </Navbar.Collapse>
       </Navbar>
     );

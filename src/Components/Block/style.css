@@ -6,11 +6,28 @@
   margin: 0;
 }
 
-table {
-  border-collapse: collapse;
+.block:visited {
+  background: green;
+  animation: visiting 0.3s linear;
 }
 
-tr,
-td {
-  padding: 0;
+.block.wall {
+  background: black;
+}
+
+.block.start {
+}
+
+@keyframes visiting {
+  0% {
+    transorm: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    background: yellowgreen;
+  }
+  100% {
+    transorm: scale(1);
+    background: green;
+  }
 }
