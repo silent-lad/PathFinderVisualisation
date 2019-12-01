@@ -8,7 +8,7 @@ function Grid(props) {
   for (let i = 0; i < this.props.height; i++) {
     let row = [];
     for (let j = 0; j < this.props.width; j++) {
-      row.push(0);
+      row.push({});
     }
     setGrid([...grid, row]);
     // grid.push(row);
@@ -16,7 +16,13 @@ function Grid(props) {
 
   for (let i = 0; i < this.props.height; i++) {
     for (let j = 0; j < this.props.width; j++) {
-      row.push(<Block key={`${i}-${j}`} className={`${i}-${j}`}></Block>);
+      row.push(
+        <Block
+          state={grid[i][j]}
+          key={`${i}-${j}`}
+          className={`${i}-${j}`}
+        ></Block>
+      );
     }
     table.push(<tr>{row}</tr>);
     row = [];
