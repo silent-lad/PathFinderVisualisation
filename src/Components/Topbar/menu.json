@@ -3,18 +3,18 @@
     {
       "name": "A* Search",
       "code": "a_star"
-    },
-    {
-      "name": "Breadth First Search",
-      "code": "bfs"
-    },
-    {
-      "name": "Depth First Search",
-      "code": "dfs"
-    },
-    {
-      "name": "Djikstra",
-      "code": "djikstra"
     }
+    // {
+    //   "name": "Breadth First Search",
+    //   "code": "bfs"
+    // },
+    // {
+    //   "name": "Depth First Search",
+    //   "code": "dfs"
+    // },
+    // {
+    //   "name": "Djikstra",
+    //   "code": "djikstra"
+    // }
   ]
 }
