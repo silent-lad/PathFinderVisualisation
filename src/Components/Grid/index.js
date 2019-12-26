@@ -1,37 +1,43 @@
-import React, { useState } from "react";
+import React from "react";
 import Block from "../Block";
 import "./style.css";
 
-function Grid(props) {
-  let [grid, setGrid] = useState([]);
+class Grid extends React.Component {
+  constructor(props) {
+    super(props);
 
-  for (let i = 0; i < this.props.height; i++) {
-    let row = [];
-    for (let j = 0; j < this.props.width; j++) {
-      row.push({});
-    }
-    setGrid([...grid, row]);
-    // grid.push(row);
-  }
+    let grid = [];
+    let gridStates = [];
 
-  for (let i = 0; i < this.props.height; i++) {
-    for (let j = 0; j < this.props.width; j++) {
-      row.push(
-        <Block
-          state={grid[i][j]}
-          key={`${i}-${j}`}
-          className={`${i}-${j}`}
-        ></Block>
-      );
+    for (let i = 0; i < this.props.height; i++) {
+      let row = [];
+      let stateRow = [];
+      for (let j = 0; j < this.props.width; j++) {
+        stateRow.push("UNVISITED");
+        row.push(
+          <Block
+            state={gridStates[i][j]}
+            key={`${i}-${j}`}
+            id={`${i}-${j}`}
+          ></Block>
+        );
+      }
+      grid.push(<tr>{row}</tr>);
+      gridStates.push(stateRow);
     }
-    table.push(<tr>{row}</tr>);
-    row = [];
+
+    this.state = {
+      grid,
+      gridStates
+    };
   }
-  return (
-    <table className="grid">
-      <tbody>{table}</tbody>
-    </table>
-  );
+  render() {
+    return (
+      <table className="grid">
+        <tbody>{this.state.grid}</tbody>
+      </table>
+    );
+  }
 }
 
 export default Grid;

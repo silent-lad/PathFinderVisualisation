@@ -6,7 +6,7 @@
   margin: 0;
 }
 
-.block:visited {
+.block.visited {
   background: green;
   animation: visiting 0.3s linear;
 }
