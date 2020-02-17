@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 
-class Block extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return <td className="block"></td>;
-  }
+function Block(props) {
+  // const [count, setCount] = useState(0);
+  let state = props.state;
+  let stateColorMap = {
+    UNVISITED: "white",
+    VISITED: "green",
+    START: "yellow",
+    END: "red",
+    WALL: "black"
+  };
+  return (
+    <td style={{ background: stateColorMap[state] }} className="block"></td>
+  );
 }
+
+// class Block extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
+//   render() {
+//     return;
+//   }
+// }
 
 export default Block;

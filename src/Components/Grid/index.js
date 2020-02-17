@@ -14,6 +14,7 @@ class Grid extends React.Component {
       let stateRow = [];
       for (let j = 0; j < this.props.width; j++) {
         stateRow.push("UNVISITED");
+        gridStates.push(stateRow);
         row.push(
           <Block
             state={gridStates[i][j]}
@@ -23,7 +24,6 @@ class Grid extends React.Component {
         );
       }
       grid.push(<tr>{row}</tr>);
-      gridStates.push(stateRow);
     }
 
     this.state = {
