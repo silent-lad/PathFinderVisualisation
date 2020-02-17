@@ -1,43 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import Block from "../Block";
 import "./style.css";
 
-class Grid extends React.Component {
-  constructor(props) {
-    super(props);
+function Grid(props) {
+  const changeState = e => {
+    try {
+      let index = JSON.parse(e.target.id);
+      console.log(index);
+    } catch (err) {
+      console.log(e.target);
+    }
 
-    let grid = [];
-    let gridStates = [];
-
-    for (let i = 0; i < this.props.height; i++) {
+    // let gridStatesNew = this.state.gridStates;
+    // gridStatesNew[(i, j)] = "VISITED";
+    // this.setState(state => ({
+    //   gridStates: gridStatesNew
+    // }));
+  };
+  let gridStatesInit = [];
+  let gridInit = [];
+  const createGrid = () => {
+    for (let i = 0; i < props.height; i++) {
       let row = [];
       let stateRow = [];
-      for (let j = 0; j < this.props.width; j++) {
+      for (let j = 0; j < props.width; j++) {
         stateRow.push("UNVISITED");
-        gridStates.push(stateRow);
+        gridStatesInit.push(stateRow);
         row.push(
           <Block
-            state={gridStates[i][j]}
+            onclick={() => changeState(i, j)}
+            state={gridStatesInit[i][j]}
             key={`${i}-${j}`}
-            id={`${i}-${j}`}
+            id={`[${i},${j}]`}
           ></Block>
         );
       }
-      grid.push(<tr>{row}</tr>);
+      gridInit.push(<tr key={`${i}`}>{row}</tr>);
     }
+    return gridInit;
+  };
 
-    this.state = {
-      grid,
-      gridStates
-    };
-  }
-  render() {
-    return (
-      <table className="grid">
-        <tbody>{this.state.grid}</tbody>
-      </table>
-    );
-  }
+  const [grid, setGrid] = useState(gridInit);
+  const [gridStates, setGridStates] = useState(gridStatesInit);
+
+  return (
+    <table className="grid">
+      <tbody onMouseOverCapture={e => changeState(e)}>{createGrid()}</tbody>
+    </table>
+  );
 }
 
 export default Grid;

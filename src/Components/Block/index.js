@@ -12,7 +12,11 @@ function Block(props) {
     WALL: "black"
   };
   return (
-    <td style={{ background: stateColorMap[state] }} className="block"></td>
+    <td
+      id={props.id}
+      style={{ background: stateColorMap[state] }}
+      className="block"
+    ></td>
   );
 }
 
