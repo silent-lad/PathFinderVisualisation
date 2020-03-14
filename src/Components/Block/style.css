@@ -12,7 +12,7 @@
 }
 
 .block.wall {
-  background: black;
+  background: rgb(112, 112, 112);
 }
 
 .block.start {
