@@ -7,7 +7,7 @@
 }
 
 .block.visited {
-  background: green;
+  background: rgb(30, 196, 79);
   animation: visiting 0.3s linear;
 }
 
